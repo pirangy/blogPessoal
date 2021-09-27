@@ -4,9 +4,11 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 
 const routes: Routes = [
+
+  {path:'', redirectTo: 'entrar', pathMatch:"full"},
   {path:'cadastrar', component: CadastrarComponent},
-  {path: 'entrar', component: EntrarComponent},
-  {path:'', redirectTo: 'entrar', pathMatch:"full"}
+  {path: 'entrar', component: EntrarComponent}
+  
 ];
 
 @NgModule({
