@@ -14,7 +14,7 @@ const routes: Routes = [
 
   {path: 'inicio', component: InicioComponent},
 
-  {path: 'tema', component: TemaComponent}
+  {path: 'temas', component: TemaComponent}
 
   
 ];
