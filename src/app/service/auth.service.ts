@@ -10,26 +10,27 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {}
+  
 
-   
-
-  }
-
-  entrar(userLogin: UserLogin): Observable<UserLogin>{
+  entrar(userLogin: UserLogin): Observable<UserLogin> {
     return this.http.post<UserLogin>('https://blogpessoalback.herokuapp.com/usuarios/logar', userLogin)
   }
 
-  cadastrar(user: User): Observable<User>{
+  cadastrar(user: User): Observable<User> {
 
     return this.http.post<User>('https://blogpessoalback.herokuapp.com/usuarios/cadastrar', user)
 
   }
 
-  logado(){
+  getByIdUser(id: number): Observable<User> {
+    return this.http.get<User>(`https://blogpessoalback.herokuapp.com/usuarios/${id}`)
+  }
+
+  logado() {
     let ok: boolean = false
 
-    if (environment.token != ''){
+    if (environment.token != '') {
       ok = true
     }
 
